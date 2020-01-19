@@ -1,19 +1,28 @@
-
 const initialState = {
-    books: []
+  books: [
+    // {
+    //   id: 1,
+    //   title: "Production",
+    //   author: "Susan"
+    // },
+    // {
+    //   id: 2,
+    //   title: "Release It!",
+    //   author: "Michael"
+    // }
+  ]
 };
 
 const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "BOOKS_LOADED":
+      return {
+        books: action.payload
+      };
 
-    switch (action.type) {
-        case 'BOOKS_LOADED':
-            return {
-                books: action.payload
-            };
-
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 };
 
 export default reducer;
