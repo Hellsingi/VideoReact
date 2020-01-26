@@ -45,13 +45,13 @@ class BookListContainer extends Component {
             return <Spinner />
         }
 
-        return <BookList books={books} onAddedToCart={onAddedToCart}/>
+        return <BookList books={books} onAddedToCart={onAddedToCart} />
     }
 }
 
 
 
-const mapStateToProps = ({ books, loading, error }) => {
+const mapStateToProps = ({ bookList: { books, loading, error } }) => {
     return { books, loading, error };
 };
 
